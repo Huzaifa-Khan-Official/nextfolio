@@ -1,1 +1,56 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* :root {
+  --primary-400: #38bdf8;
+  --primary-600: #0284c7;
+  --primary-700: #0369a1;
+} */
+
+/* .dark {
+  --dark-100: #1e293b;
+  --dark-200: #334155;
+} */
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+  opacity: 0.05;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(14, 165, 233, 0.5);
+  border-radius: 20px;
+}

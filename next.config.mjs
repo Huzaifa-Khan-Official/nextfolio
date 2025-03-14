@@ -1,11 +1,3 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   /* config options here */
-// };
-
-// export default nextConfig;
-
 import pwa from 'next-pwa'
 
 const withPWA = pwa({
@@ -17,6 +9,14 @@ const nextConfig = {
   output: 'standalone',
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 };
 
