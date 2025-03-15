@@ -91,12 +91,12 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 py-10 flex flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0"
+          className="sm:w-1/2 text-center sm:text-left mb-12 lg:mb-0"
         >
           <h1
             ref={headingRef}
@@ -107,7 +107,7 @@ export default function Hero() {
           <p ref={paragraphRef} className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
             Crafting digital experiences that make a difference
           </p>
-          <div ref={buttonsRef} className="flex gap-4 justify-center lg:justify-start">
+          <div ref={buttonsRef} className="flex gap-4 justify-center lg:justify-start flex-wrap">
             <a
               href="#contact"
               className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-full transition-colors"
@@ -119,7 +119,7 @@ export default function Hero() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                className="p-3 dark:hover:border-primary-400 border-1 dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -127,20 +127,20 @@ export default function Hero() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                className="p-3 dark:hover:border-primary-400 border-1 dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="mailto:your@email.com"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                className="p-3 dark:hover:border-primary-400 border-1 dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
               >
                 <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>
         </motion.div>
-        <div ref={canvasRef} className="lg:w-1/2 h-[400px]">
+        <div ref={canvasRef} className="hidden sm:block sm:w-1/2 h-[400px]">
           <Canvas camera={{ position: [0, 0, 5] }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 5]} intensity={1} />

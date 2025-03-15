@@ -28,25 +28,26 @@ const Header = () => {
             Portfolio
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden sm:flex items-center space-x-4 md:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="relative text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#0087ca] after:bottom-0 after:left-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
               >
                 {item.name}
               </Link>
             ))}
+
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-dark-200"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-dark-200 cursor-pointer hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="sm:hidden flex items-center">
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 mr-2 rounded-lg bg-gray-100 dark:bg-dark-200"
@@ -58,14 +59,15 @@ const Header = () => {
             </button>
           </div>
         </div>
-
         {isOpen && (
-          <div className="md:hidden mt-4">
+          <div className="sm:hidden mt-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400"
+                className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer 
+                   relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#0087ca] after:bottom-0 after:left-0 after:scale-x-0 
+                   after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 focus:after:scale-x-100 active:after:scale-x-100"
                 onClick={toggleMenu}
               >
                 {item.name}
