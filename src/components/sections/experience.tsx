@@ -49,14 +49,13 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="flex gap-4 mb-8"
+              className="flex gap-2 mb-4 cursor-pointer rounded-lg shadow-lg bg-white dark:bg-dark-100 hover:bg-primary-100 dark:hover:bg-primary-800/50 hover:-translate-y-1"
             >
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
+              <div className="flex-grow p-6 py-4 ">
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center mb-2">
                   <Briefcase className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
-              </div>
-              <div className="flex-grow bg-white dark:bg-dark-200 p-6 rounded-lg shadow-lg">
+
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-semibold">{exp.title}</h3>
                   <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>

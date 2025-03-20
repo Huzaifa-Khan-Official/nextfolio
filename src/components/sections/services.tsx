@@ -61,9 +61,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                            className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:bg-primary-100 group dark:hover:bg-primary-800/50"
                         >
-                            <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mb-6">
+                            <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mb-6 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
                                 {service.icon}
                             </div>
                             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

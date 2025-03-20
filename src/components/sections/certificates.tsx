@@ -53,14 +53,14 @@ export default function Certificates() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group"
+                            className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:bg-primary-100 hover:-translate-y-1 dark:hover:bg-primary-800/50"
                         >
                             <div className="relative h-48">
                                 <Image
                                     src={cert.image}
                                     alt={cert.title}
                                     fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className="object-cover transition-transform duration-300"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                 <div className="absolute bottom-4 left-4">
@@ -69,7 +69,7 @@ export default function Certificates() {
                             </div>
                             <div className="p-6">
                                 <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-                                <p className="text-primary-600 dark:text-primary-400 mb-1">{cert.issuer}</p>
+                                <p className="text-primary-600 dark:text-primary-400 dark:group-hover:text-gray-300 mb-1">{cert.issuer}</p>
                                 <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">{cert.date}</p>
                                 <a
                                     href={cert.credential}

@@ -48,7 +48,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer hover:bg-primary-100 dark:hover:bg-primary-800/50 hover:-translate-y-1"
             >
               <div className="bg-primary-100 dark:bg-primary-900/20 p-3 rounded-full w-fit mb-4">
                 {skill.icon}
