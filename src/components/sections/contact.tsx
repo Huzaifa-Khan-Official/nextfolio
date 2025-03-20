@@ -26,10 +26,10 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg text-center"
+                        className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
-                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4">
-                            <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4  group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
+                            <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400 " />
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Email</h3>
                         <a href="mailto:contact@example.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
@@ -42,9 +42,9 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg text-center"
+                        className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
-                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4">
+                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
                             <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Phone</h3>
@@ -58,9 +58,9 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg text-center"
+                        className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
-                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4">
+                        <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20 ">
                             <MapPin className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Location</h3>
@@ -75,7 +75,7 @@ export default function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto bg-white dark:bg-dark-200 rounded-xl shadow-lg p-8"
+                    className="max-w-3xl mx-auto bg-white dark:bg-dark-100 rounded-xl shadow-lg p-8"
                 >
                     <form className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
@@ -122,7 +122,7 @@ export default function Contact() {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 rounded-lg transition-colors"
+                            className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 rounded-lg transition-colors cursor-pointer"
                         >
                             Send Message
                         </button>

@@ -75,7 +75,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero-section" ref={sectionRef} className="min-h-[calc(100vh-13vh)] relative overflow-hidden">
+    <section id="hero-section" ref={sectionRef} className="sm:min-h-[500px] relative overflow-hidden">
       <div className="absolute inset-0 hero-gradient -z-10" />
 
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400 animate-bounce">
