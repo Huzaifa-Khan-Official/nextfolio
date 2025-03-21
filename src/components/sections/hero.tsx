@@ -8,6 +8,8 @@ import { Github, Linkedin, Mail } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import AnimatedSphere from "../AnimatedSphere"
+import Link from "next/link"
+import BubbleAnimation from "../BubbleAnimation"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -78,8 +80,8 @@ export default function Hero() {
     <section id="hero-section" ref={sectionRef} className="sm:min-h-[500px] relative overflow-hidden">
       <div className="absolute inset-0 hero-gradient -z-10" />
 
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400 animate-bounce">
-        <span className="text-sm mb-2">Scroll Down</span>
+      <Link href="#about" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400 animate-bounce cursor-pointer">
+        <span className="text-sm mb-2 ">Scroll Down</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12 5V19M12 19L5 12M12 19L19 12"
@@ -89,21 +91,28 @@ export default function Hero() {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
+      </Link>
 
       <div className="container mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="sm:w-1/2 text-center sm:text-left mb-12 lg:mb-0"
+          className="sm:w-1/2 text-center sm:text-left mb-12 lg:mb-0 relative z-10"
         >
+          <BubbleAnimation />
           <h1
             ref={headingRef}
             className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"
           >
-            Full Stack Developer
+            Huzaifa Khan
           </h1>
+          <h2
+            ref={headingRef}
+            className="text-2xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"
+          >
+            Full Stack Developer
+          </h2>
           <p ref={paragraphRef} className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
             Crafting digital experiences that make a difference
           </p>
