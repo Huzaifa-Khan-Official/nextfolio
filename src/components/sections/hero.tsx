@@ -77,11 +77,11 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero-section" ref={sectionRef} className="sm:min-h-[500px] relative overflow-hidden">
-      <div className="absolute inset-0 hero-gradient -z-10" />
+    <section id="hero-section" ref={sectionRef} className="sm:min-h-[500px] relative overflow-hidden pt-20 bg-custom-linear-even dark:bg-none">
+      <div className="absolute inset-0 -z-10" />
 
-      <Link href="#about" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400 animate-bounce cursor-pointer">
-        <span className="text-sm mb-2 ">Scroll Down</span>
+      <Link href="#about" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-700 dark:text-gray-100 animate-bounce cursor-pointer">
+        <span className="text-sm mb-2">Scroll Down</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12 5V19M12 19L5 12M12 19L19 12"

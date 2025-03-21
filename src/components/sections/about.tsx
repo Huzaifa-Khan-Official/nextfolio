@@ -23,7 +23,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-100 dark:bg-dark-100">
+    <section id="about" className="py-20 bg-custom-linear-odd dark:bg-none dark:bg-dark-100">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

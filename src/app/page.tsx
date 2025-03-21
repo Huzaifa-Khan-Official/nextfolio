@@ -18,15 +18,13 @@ export default function Home() {
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <div className="min-h-screen bg-white dark:bg-dark-200 transition-colors duration-300">
           <Header />
-          <div className="pt-20">
-            <Hero />
-            <About />
-            <Experience />
-            <Projects />
-            <Services />
-            <Certificates />
-            <Contact />
-          </div>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Services />
+          <Certificates />
+          <Contact />
           <Footer />
         </div>
       </ThemeProvider>

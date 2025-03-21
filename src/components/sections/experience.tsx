@@ -94,7 +94,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" className="py-20" ref={sectionRef}>
+    <section id="experience" className="py-20 bg-custom-linear-even dark:bg-none" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
@@ -109,10 +109,10 @@ export default function Experience() {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="flex gap-2 mb-4 rounded-lg shadow-lg bg-white dark:bg-dark-100 hover:bg-primary-100 dark:hover:bg-primary-800/50"
+              className="flex gap-2 mb-4 rounded-lg shadow-lg bg-white dark:bg-dark-100 hover:bg-primary-100 dark:hover:bg-primary-800/50 group"
             >
               <div className="flex-grow p-6 py-4 ">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center mb-2">
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center mb-2 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
                   <Briefcase className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div className="flex justify-between items-start mb-2">
