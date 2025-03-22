@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import BubbleAnimation from "../BubbleAnimation";
-import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import AnimatedSphere from "../AnimatedSphere";
 import dynamic from "next/dynamic";
