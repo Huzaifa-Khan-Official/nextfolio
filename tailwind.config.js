@@ -24,16 +24,18 @@ export default {
         dark: {
           100: '#1E293B',
           200: '#0F172A',
+          300: '#020617',
+        },
+        light: {
+          100: '#F8FAFC',
+          200: '#F1F5F9',
+          300: '#E2E8F0',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
-      },
-      backgroundImage: {
-        // 'custom-linear-even': 'linear-gradient(10deg, rgba(125,211,252,1) 10%, rgba(186,230,253,1) 40%, rgba(224,242,254,0.2047991071428571) 100%)',
-        // 'custom-linear-odd': "linear-gradient(190deg, rgba(125,211,252,1) 10%, rgba(186,230,253,1) 40%, rgba(224,242,254,0.2047991071428571) 100%)",
       },
     },
   },

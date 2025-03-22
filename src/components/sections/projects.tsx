@@ -33,7 +33,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-custom-linear-odd dark:bg-none dark:bg-dark-100">
+    <section id="projects" className="py-20 bg-light-300 dark:bg-dark-100">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

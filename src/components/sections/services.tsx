@@ -38,7 +38,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="services" className="py-20 bg-custom-linear-even dark:bg-none">
+        <section id="services" className="py-20 bg-light-200 dark:bg-dark-200">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

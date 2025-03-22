@@ -94,7 +94,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" className="py-20 bg-custom-linear-even dark:bg-none" ref={sectionRef}>
+    <section id="experience" className="py-20 bg-light-200 dark:bg-dark-200" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
