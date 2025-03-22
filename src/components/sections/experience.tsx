@@ -32,10 +32,6 @@ export default function Experience() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger)
-
-    // Animation for the heading
     gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: 20 },

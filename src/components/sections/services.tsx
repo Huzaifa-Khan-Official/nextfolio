@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
 import { Code, Layout, Server, Smartphone, Globe, Palette } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 const services = [
     {
@@ -37,21 +39,37 @@ const services = [
 ];
 
 export default function Services() {
+    const headingRef2 = useRef(null);
+
+    useEffect(() => {
+
+        gsap.fromTo(
+            headingRef2.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1, y: 0, duration: 1, delay: 0.5,
+                scrollTrigger: {
+                    trigger: headingRef2.current,
+                    start: "top 80%",
+                    end: "bottom top",
+                    scrub: 1,
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+    }, []);
     return (
         <section id="services" className="py-20 bg-light-200 dark:bg-dark-200">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <div
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Services</h2>
+                    <h2 ref={headingRef2} className="text-3xl md:text-4xl font-bold mb-4">Services</h2>
                     <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Comprehensive solutions tailored to your needs
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
