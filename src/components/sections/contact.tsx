@@ -1,31 +1,110 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 export default function Contact() {
+    const headingRef = useRef(null);
+    const emailCardRef = useRef(null);
+    const phoneCardRef = useRef(null);
+    const locationCardRef = useRef(null);
+    const formRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo(
+            headingRef.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1, y: 0, duration: 1, delay: 0.5,
+                scrollTrigger: {
+                    trigger: headingRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        gsap.fromTo(
+            emailCardRef.current,
+            { opacity: 0, y: 20, scale: 0.8 },
+            {
+                opacity: 1, y: 0, scale: 1,
+                duration: 0.8, delay: 0.2,
+                scrollTrigger: {
+                    trigger: emailCardRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        gsap.fromTo(
+            phoneCardRef.current,
+            { opacity: 0, y: 20, scale: 0.8 },
+            {
+                opacity: 1, y: 0, scale: 1,
+                duration: 0.8, delay: 0.4,
+                scrollTrigger: {
+                    trigger: phoneCardRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        gsap.fromTo(
+            locationCardRef.current,
+            { opacity: 0, y: 20, scale: 0.8 },
+            {
+                opacity: 1, y: 0, scale: 1,
+                duration: 0.8, delay: 0.6,
+                scrollTrigger: {
+                    trigger: locationCardRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        gsap.fromTo(
+            formRef.current,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1, y: 0,
+                duration: 1, delay: 0.8,
+                scrollTrigger: {
+                    trigger: formRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
     return (
         <section id="contact" className="py-20 bg-light-200 dark:bg-dark-200">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <div
+                    ref={headingRef}
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
                     <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Let's discuss how we can work together to bring your ideas to life
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
+                    <div
+                        ref={emailCardRef}
                         className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
                         <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4  group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
@@ -35,13 +114,10 @@ export default function Contact() {
                         <a href="mailto:contact@example.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
                             contact@example.com
                         </a>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        viewport={{ once: true }}
+                    <div
+                        ref={phoneCardRef}
                         className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
                         <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
@@ -51,13 +127,10 @@ export default function Contact() {
                         <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
                             +1 (234) 567-890
                         </a>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: true }}
+                    <div
+                        ref={locationCardRef}
                         className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg text-center hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer group"
                     >
                         <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mx-auto mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20 ">
@@ -67,14 +140,11 @@ export default function Contact() {
                         <p className="text-gray-600 dark:text-gray-300">
                             San Francisco, CA
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <div
+                    ref={formRef}
                     className="max-w-3xl mx-auto bg-white dark:bg-dark-100 rounded-xl shadow-lg p-8"
                 >
                     <form className="space-y-6">
@@ -127,7 +197,7 @@ export default function Contact() {
                             Send Message
                         </button>
                     </form>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

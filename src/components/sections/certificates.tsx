@@ -1,8 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 const certificates = [
     {
@@ -29,30 +31,83 @@ const certificates = [
 ];
 
 export default function Certificates() {
+    const headingRef = useRef(null);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        gsap.fromTo(
+            headingRef.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1, y: 0, duration: 1, delay: 0.5,
+                scrollTrigger: {
+                    trigger: headingRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+        cardsRef.current.forEach((card, index) => {
+            gsap.fromTo(
+                card,
+                {
+                    opacity: 0,
+                    y: 20,
+                    scale: 0.8,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    },
+                    onComplete: () => {
+                        if (card) {
+                            card.addEventListener("mouseenter", () => {
+                                gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" })
+                            })
+
+                            card.addEventListener("mouseleave", () => {
+                                gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" })
+                            })
+                        }
+                    }
+                }
+            )
+        })
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            gsap.killTweensOf(cardsRef.current);
+        }
+    }, []);
+
     return (
         <section id="certificates" className="py-20 bg-light-300 dark:bg-dark-100">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <div
+                    ref={headingRef}
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Certificates</h2>
                     <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Professional certifications and achievements
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {certificates.map((cert, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                            viewport={{ once: true }}
+                            ref={(i) => {
+                                cardsRef.current[index] = i;
+                            }}
                             className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:bg-primary-100 hover:-translate-y-1 dark:hover:bg-primary-800/50"
                         >
                             <div className="relative h-48">
@@ -81,7 +136,7 @@ export default function Certificates() {
                                     <ExternalLink className="w-4 h-4" />
                                 </a>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
