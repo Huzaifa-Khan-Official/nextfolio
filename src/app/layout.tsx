@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import PWA from "@/components/PWA";
 
 const APP_NAME = "Portfolio";
 const APP_DEFAULT_TITLE = "Huzaifa Khan | Portfolio";
@@ -15,16 +14,6 @@ export const metadata: Metadata = {
     template: APP_TITLE_TEMPLATE,
   },
   description: APP_DESCRIPTION,
-  manifest: "/manifest.json",
-  other: {
-    "apple-mobile-web-app-title": "Portfolio",
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: APP_DEFAULT_TITLE,
-    startupImage: ["/icons/Dark Logo.png"],
-  },
   formatDetection: {
     telephone: false,
   },
@@ -54,10 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning >
+      <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-          <PWA />
         </ThemeProvider>
       </body>
     </html>
