@@ -2,6 +2,16 @@
   "name": "nextfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "description": "A Next.js portfolio website with customizable theme and React Three Fiber integration",
+  "keywords": [
+    "next.js",
+    "portfolio",
+    "react three fiber",
+    "Huzaifa Khan"
+  ],
+  "author": "Huzaifa Khan huzaifakhanofficial01@gmail.com",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
