@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     rules: {
       "react/no-unescaped-entities": "off", // Disable globally
+      "react/no-unused-vars": "off", // Disable
     },
   },
 ];
