@@ -1,24 +1,31 @@
 {
   "name": "Huzaifa Khan",
   "short_name": "Portfolio",
-  "description": "Showcasing Huzaifa Khan's skills, projects, and expertise in web development",
+  "description": "Showcasing Huzaifa Khan's web development portfolio",
   "icons": [
     {
-      "src": "/icons/web-app-manifest-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/web-app-manifest-512x512.png",
-      "sizes": "512x512",
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "theme_color": "#18181b",
   "background_color": "#18181b",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "orientation": "portrait-primary"
 }
