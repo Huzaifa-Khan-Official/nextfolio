@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FileUser, Github, Linkedin, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
@@ -133,6 +133,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
                 className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                title="GitHub Profile"
               >
                 <Github className="w-6 h-6" />
               </Link>
@@ -142,6 +143,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
                 className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                title="LinkedIn Profile"
               >
                 <Linkedin className="w-6 h-6" />
               </Link>
@@ -149,8 +151,17 @@ export default function Hero() {
                 href="mailto:your@email.com"
                 aria-label="Send Email"
                 className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                title="Send Email"
               >
                 <Mail className="w-6 h-6" />
+              </Link>
+              <Link
+                href="mailto:your@email.com"
+                aria-label="See Resume"
+                className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
+                title="See Resume"
+              >
+                <FileUser className="w-6 h-6" />
               </Link>
             </div>
           </div>

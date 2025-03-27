@@ -21,6 +21,7 @@
   "dependencies": {
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.1.0",
+    "axios": "^1.8.4",
     "bcryptjs": "^3.0.2",
     "gsap": "^3.12.7",
     "lucide-react": "^0.482.0",
