@@ -11,18 +11,21 @@ const experiences = [
     company: "Tech Corp",
     period: "2021 - Present",
     description: "Leading development of enterprise applications using modern technologies.",
+    skills: ["Node.js", "React", "PostgreSQL", "AWS"],
   },
   {
     title: "Frontend Developer",
     company: "Digital Agency",
     period: "2019 - 2021",
     description: "Developed responsive web applications and implemented UI/UX designs.",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    title: "Software Engineer",
+    title: "Junior Developer",
     company: "Startup Inc",
     period: "2017 - 2019",
     description: "Built and maintained various web applications and services.",
+    skills: ["JavaScript", "HTML", "CSS", "jQuery"],
   },
 ]
 
@@ -92,13 +95,13 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 bg-light-200 dark:bg-dark-200" ref={sectionRef}>
       <div className="container mx-auto px-6">
-        <div ref={headingRef} className="text-center mb-16">
+        <div ref={headingRef} className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             My professional journey in software development
           </p>
         </div>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           {experiences.map((exp, index) => (
             <div
               key={index}
@@ -108,15 +111,22 @@ export default function Experience() {
               className="flex gap-2 mb-4 rounded-lg shadow-lg bg-white dark:bg-dark-100 hover:bg-primary-100 dark:hover:bg-primary-800/50 group"
             >
               <div className="flex-grow p-6 py-4 ">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center mb-2 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
-                  <Briefcase className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-                </div>
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-semibold">{exp.title}</h3>
                   <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
                 </div>
                 <p className="text-primary-600 dark:text-primary-400 mb-2">{exp.company}</p>
                 <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
+                <div className="flex flex-wrap gap-2 my-2">
+                  {exp.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-full text-sm group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20 dark:group-hover:text-gray-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

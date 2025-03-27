@@ -2,24 +2,24 @@
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code2, Palette, Terminal } from 'lucide-react';
+import { Code2, Palette, Server } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
-const skills = [
-  {
-    icon: <Code2 className="w-6 h-6" />,
-    title: 'Frontend Development',
-    description: 'Creating responsive and interactive user interfaces with modern frameworks.',
-  },
-  {
-    icon: <Terminal className="w-6 h-6" />,
-    title: 'Backend Development',
-    description: 'Building scalable server-side applications and APIs.',
-  },
+const expertise = [
   {
     icon: <Palette className="w-6 h-6" />,
-    title: 'UI/UX Design',
-    description: 'Designing intuitive and beautiful user experiences.',
+    title: 'Frontend Development',
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "HTML/CSS"],
+  },
+  {
+    icon: <Server className="w-6 h-6" />,
+    title: 'Backend Development',
+    skills: ["Node.js", "Express", "Python", "Django", "GraphQL", "RESTful APIs"],
+  },
+  {
+    icon: <Code2 className="w-6 h-6" />,
+    title: 'Tools & DevOps',
+    skills: ["Git", "Docker", "AWS", "CI/CD", "Jest", "Vercel", "MongoDB", "PostgreSQL"],
   },
 ];
 
@@ -99,8 +99,13 @@ export default function About() {
           </p>
         </div>
 
+        <div className="flex items-center mb-12">
+          <h2 className="text-3xl font-bold">Expertise</h2>
+          <div className="h-px bg-gradient-to-r from-cyan-500 to-indigo-500 flex-grow ml-4"></div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
+          {expertise.map((section, index) => (
             <div
               key={index}
               ref={(i) => {
@@ -109,10 +114,17 @@ export default function About() {
               className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer hover:bg-primary-100 dark:hover:bg-primary-800/50 hover:-translate-y-1 group"
             >
               <div className="bg-primary-100 dark:bg-primary-900/20 p-3 rounded-full w-fit mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
-                {skill.icon}
+                {section.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400">{skill.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
+              {
+                section.skills.map((skill) => (
+                  <li key={skill} className="flex items-center contrast-150">
+                    <span className="w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
+                    <span className="text-gray-800 dark:text-gray-300">{skill}</span>
+                  </li>
+                ))
+              }
             </div>
           ))}
         </div>

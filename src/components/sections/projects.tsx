@@ -13,7 +13,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800',
     github: 'https://github.com',
     demo: 'https://demo.com',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
+    technologies: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
   },
   {
     title: 'Task Management App',
@@ -21,7 +21,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800',
     github: 'https://github.com',
     demo: 'https://demo.com',
-    tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
   },
   {
     title: 'AI Image Generator',
@@ -29,7 +29,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=800',
     github: 'https://github.com',
     demo: 'https://demo.com',
-    tags: ['Python', 'FastAPI', 'React', 'AI'],
+    technologies: ['Python', 'FastAPI', 'React', 'AI'],
   },
 ];
 
@@ -125,7 +125,7 @@ export default function Projects() {
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
+                  {project.technologies.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
                       className="px-3 py-1 bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-full text-sm group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20 dark:group-hover:text-gray-300"
