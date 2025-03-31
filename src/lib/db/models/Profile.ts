@@ -67,6 +67,7 @@ export interface IContact {
 
 export interface IProfile {
     _id?: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId,
     hero: IHero;
     about: IAbout;
     experiences: IExperience[];
@@ -80,6 +81,7 @@ export interface IProfile {
 
 
 const profileSchema = new Schema<IProfile>({
+    userId: mongoose.Types.ObjectId,
     hero: {
         title: String,
         subtitle: String,
