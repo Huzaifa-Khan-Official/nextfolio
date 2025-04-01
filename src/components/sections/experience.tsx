@@ -34,6 +34,8 @@ export default function Experience() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
+    const currentCards = [...cardsRef.current];
+
     gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: 20 },
@@ -47,17 +49,14 @@ export default function Experience() {
           toggleActions: "play none none none",
         },
       },
-    )
+    );
 
-    // Animation for each card
-    cardsRef.current.forEach((card, index) => {
+    currentCards.forEach((card, index) => {
+      if (!card) return;
+
       gsap.fromTo(
         card,
-        {
-          opacity: 0,
-          x: -40,
-          y: 0,
-        },
+        { opacity: 0, x: -40, y: 0 },
         {
           opacity: 1,
           x: 0,
@@ -69,27 +68,23 @@ export default function Experience() {
             toggleActions: "play none none none",
           },
           onComplete: () => {
-            if (card) {
-              // Add hover animation after the initial animation is complete
-              card.addEventListener("mouseenter", () => {
-                gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" })
-              })
+            card.addEventListener("mouseenter", () => {
+              gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+            });
 
-              card.addEventListener("mouseleave", () => {
-                gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" })
-              })
-            }
+            card.addEventListener("mouseleave", () => {
+              gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+            });
           },
         },
-      )
-    })
+      );
+    });
 
-    // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-      gsap.killTweensOf(cardsRef.current)
-    }
-  }, [])
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsap.killTweensOf(currentCards);
+    };
+  }, []);
 
   return (
     <section id="experience" className="py-20 bg-light-200 dark:bg-dark-200" ref={sectionRef}>

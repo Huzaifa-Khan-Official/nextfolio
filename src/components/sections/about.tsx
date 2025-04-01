@@ -28,22 +28,29 @@ export default function About() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
-    )
+    const currentHeading = headingRef.current;
+    const currentCards = [...cardsRef.current];
 
-    cardsRef.current.forEach((card, index) => {
+    if (currentHeading) {
+      gsap.fromTo(
+        currentHeading,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: currentHeading,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    }
+
+    currentCards.forEach((card, index) => {
+      if (!card) return;
+
       gsap.fromTo(
         card,
         {
@@ -63,26 +70,23 @@ export default function About() {
             toggleActions: "play none none none"
           },
           onComplete: () => {
-            if (card) {
-              card.addEventListener("mouseenter", () => {
-                gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" })
-              })
+            card.addEventListener("mouseenter", () => {
+              gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+            });
 
-              card.addEventListener("mouseleave", () => {
-                gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" })
-              })
-            }
+            card.addEventListener("mouseleave", () => {
+              gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+            });
           }
         }
-      )
-    })
+      );
+    });
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.killTweensOf(cardsRef.current);
-    }
-  }, [])
-
+      gsap.killTweensOf(currentCards);
+    };
+  }, []);
 
   return (
     <section id="about" className="py-20 bg-light-300 dark:bg-dark-100">

@@ -43,6 +43,8 @@ export default function Services() {
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     useEffect(() => {
+        const currentCards = [...cardsRef.current];
+
         gsap.fromTo(
             headingRef.current,
             { opacity: 0, y: 50 },
@@ -56,14 +58,12 @@ export default function Services() {
             }
         );
 
-        cardsRef.current.forEach((card, index) => {
+        currentCards.forEach((card, index) => {
+            if (!card) return;
+
             gsap.fromTo(
                 card,
-                {
-                    opacity: 0,
-                    y: 20,
-                    scale: 0.8,
-                },
+                { opacity: 0, y: 20, scale: 0.8 },
                 {
                     opacity: 1,
                     y: 0,
@@ -76,24 +76,22 @@ export default function Services() {
                         toggleActions: "play none none none"
                     },
                     onComplete: () => {
-                        if (card) {
-                            card.addEventListener("mouseenter", () => {
-                                gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" })
-                            })
+                        card.addEventListener("mouseenter", () => {
+                            gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+                        });
 
-                            card.addEventListener("mouseleave", () => {
-                                gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" })
-                            })
-                        }
+                        card.addEventListener("mouseleave", () => {
+                            gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+                        });
                     }
                 }
-            )
-        })
+            );
+        });
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            gsap.killTweensOf(cardsRef.current);
-        }
+            gsap.killTweensOf(currentCards);
+        };
     }, []);
 
     return (
