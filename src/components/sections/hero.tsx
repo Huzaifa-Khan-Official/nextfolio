@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { FileUser, Github, Linkedin, Mail } from "lucide-react";
+import { FileUser, Github, Linkedin } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import BubbleAnimation from "../BubbleAnimation";
 import { OrbitControls } from "@react-three/drei";
 import AnimatedSphere from "../AnimatedSphere";
 import dynamic from "next/dynamic";
+import { profileData } from "../../../constant";
 
 const DynamicCanvas = dynamic(() => import("@react-three/fiber").then((mod) => mod.Canvas), {
   ssr: false,
@@ -107,16 +108,16 @@ export default function Hero() {
             ref={headingRef1}
             className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"
           >
-            Huzaifa Khan
+            {profileData.hero.name}
           </h1>
           <h2
             ref={headingRef2}
             className="text-2xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"
           >
-            Full Stack Developer
+            {profileData.hero.title}
           </h2>
           <p ref={paragraphRef} className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Crafting digital experiences that make a difference
+            {profileData.hero.subtitle}
           </p>
           <div ref={buttonsRef} className="flex gap-4 justify-center lg:justify-start flex-wrap">
             <Link
@@ -128,7 +129,7 @@ export default function Hero() {
             </Link>
             <div className="flex gap-4">
               <Link
-                href="https://github.com"
+                href={`${profileData.hero.social_links.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
@@ -138,7 +139,7 @@ export default function Hero() {
                 <Github className="w-6 h-6" />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href={`${profileData.hero.social_links.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
@@ -148,16 +149,9 @@ export default function Hero() {
                 <Linkedin className="w-6 h-6" />
               </Link>
               <Link
-                href="mailto:your@email.com"
-                aria-label="Send Email"
-                className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
-                title="Send Email"
-              >
-                <Mail className="w-6 h-6" />
-              </Link>
-              <Link
-                href="mailto:your@email.com"
+                href={`${profileData.hero.resume}`}
                 aria-label="See Resume"
+                target="_blank"
                 className="p-3 dark:hover:border-primary-400 border dark:hover:text-primary-400 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors"
                 title="See Resume"
               >

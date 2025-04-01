@@ -2,26 +2,9 @@
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code2, Palette, Server } from 'lucide-react';
 import { useEffect, useRef } from 'react';
-
-const expertise = [
-  {
-    icon: <Palette className="w-6 h-6" />,
-    title: 'Frontend Development',
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "HTML/CSS"],
-  },
-  {
-    icon: <Server className="w-6 h-6" />,
-    title: 'Backend Development',
-    skills: ["Node.js", "Express", "Python", "Django", "GraphQL", "RESTful APIs"],
-  },
-  {
-    icon: <Code2 className="w-6 h-6" />,
-    title: 'Tools & DevOps',
-    skills: ["Git", "Docker", "AWS", "CI/CD", "Jest", "Vercel", "MongoDB", "PostgreSQL"],
-  },
-];
+import { profileData } from '../../../constant';
+import { Icon } from '../Icon';
 
 export default function About() {
   const headingRef = useRef(null);
@@ -97,9 +80,7 @@ export default function About() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            I'm a passionate developer with expertise in building modern web applications.
-            With a strong foundation in both frontend and backend technologies,
-            I create seamless digital experiences that solve real-world problems.
+            {profileData.about.description}
           </p>
         </div>
 
@@ -109,7 +90,7 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {expertise.map((section, index) => (
+          {profileData.about.expertise.map((section, index) => (
             <div
               key={index}
               ref={(i) => {
@@ -118,14 +99,14 @@ export default function About() {
               className="bg-white dark:bg-dark-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer hover:bg-primary-100 dark:hover:bg-primary-800/50 hover:-translate-y-1 group"
             >
               <div className="bg-primary-100 dark:bg-primary-900/20 p-3 rounded-full w-fit mb-4 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
-                {section.icon}
+                <Icon iconName={`${section.icon}`} />
               </div>
               <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
               {
                 section.skills.map((skill) => (
                   <li key={skill} className="flex items-center contrast-150">
                     <span className="w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
-                    <span className="text-gray-800 dark:text-gray-300">{skill}</span>
+                    <span className="text-gray-800 dark:text-gray-300 hover:underline">{skill}</span>
                   </li>
                 ))
               }

@@ -4,6 +4,8 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import { profileData } from '../../../constant';
+import Link from 'next/link';
 
 export default function Contact() {
     const headingRef = useRef(null);
@@ -111,9 +113,9 @@ export default function Contact() {
                             <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400 " />
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Email</h3>
-                        <a href="mailto:contact@example.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
-                            contact@example.com
-                        </a>
+                        <Link href={`mailto:${profileData.contact.email}`} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
+                            {profileData.contact.email}
+                        </Link>
                     </div>
 
                     <div
@@ -125,7 +127,7 @@ export default function Contact() {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Phone</h3>
                         <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
-                            +1 (234) 567-890
+                            {profileData.contact.phone}
                         </a>
                     </div>
 
@@ -138,7 +140,7 @@ export default function Contact() {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Location</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            San Francisco, CA
+                            {profileData.contact.address}
                         </p>
                     </div>
                 </div>
