@@ -37,7 +37,7 @@ export default function Projects() {
       },
     )
 
-    currentCards.forEach((card, index) => {
+    currentCards.forEach((card) => {
       if (!card) return
 
       gsap.fromTo(
@@ -52,7 +52,7 @@ export default function Projects() {
           y: 0,
           scale: 1,
           duration: 0.8,
-          delay: index * 0.2,
+          delay: 0.2,
           scrollTrigger: {
             trigger: card,
             start: "top 80%",

@@ -1,6 +1,6 @@
 "use client"
 
-import { Award, ExternalLink } from "lucide-react"
+import { Award } from "lucide-react"
 import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -9,7 +9,6 @@ import { profileData } from "../../../constant"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import { Icon } from "../Icon"
-import Link from "next/link"
 
 export default function Certificates() {
   const headingRef = useRef(null)
@@ -100,7 +99,7 @@ export default function Certificates() {
   const CustomRightArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
       onClick={onClick}
-      className="absolute right-0 -translate-y-1/2 top-1/2 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-300/80 shadow-md hover:bg-white dark:hover:bg-dark-200 transition-all"
+      className="absolute right-0 -translate-y-1/2 top-1/2 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-300/80 shadow-md hover:bg-white dark:hover:bg-dark-200 transition-all cursor-pointer"
       aria-label="Next slide"
     >
       <Icon iconName="ChevronRight" />
@@ -110,7 +109,7 @@ export default function Certificates() {
   const CustomLeftArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
       onClick={onClick}
-      className="absolute left-0 -translate-y-1/2 top-1/2 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-300/80 shadow-md hover:bg-white dark:hover:bg-dark-200 transition-all"
+      className="absolute left-0 -translate-y-1/2 top-1/2 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-300/80 shadow-md hover:bg-white dark:hover:bg-dark-200 transition-all cursor-pointer"
       aria-label="Previous slide"
     >
       <Icon iconName="ChevronLeft"/>
@@ -155,7 +154,7 @@ export default function Certificates() {
                   src={cert.image || "/placeholder.svg"}
                   alt={cert.title}
                   fill
-                  className="object-cover transition-transform duration-300"
+                  className="object-contain transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
@@ -168,15 +167,6 @@ export default function Certificates() {
                   {cert.issuer}
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">{cert.date}</p>
-                <Link
-                  href={`${cert.credential}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
-                >
-                  <span>View Credential</span>
-                  <ExternalLink className="w-4 h-4" />
-                </Link>
               </div>
             </div>
           ))}
