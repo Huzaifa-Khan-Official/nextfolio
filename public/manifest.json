@@ -1,11 +1,11 @@
 {
   "name": "Huzaifa Khan",
-  "short_name": "Portfolio",
+  "short_name": "Huzaifa Khan",
   "description": "Showcasing Huzaifa Khan's skills, projects, and expertise in web development. Explore top-notch projects and innovative solutions.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
+  "background_color": "#1e7086",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
@@ -328,14 +328,6 @@
       "sizes": "256x256"
     },
     {
-      "src": "android/android-launchericon-512-512.png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "android/android-launchericon-192-192.png",
-      "sizes": "192x192"
-    },
-    {
       "src": "android/android-launchericon-144-144.png",
       "sizes": "144x144"
     },
@@ -440,20 +432,24 @@
       "sizes": "180x180"
     },
     {
-      "src": "ios/192.png",
-      "sizes": "192x192"
-    },
-    {
       "src": "ios/256.png",
       "sizes": "256x256"
     },
     {
-      "src": "ios/512.png",
-      "sizes": "512x512"
-    },
-    {
       "src": "ios/1024.png",
       "sizes": "1024x1024"
+    },
+    {
+      "src": "/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

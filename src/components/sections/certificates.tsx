@@ -137,7 +137,7 @@ export default function Certificates() {
           containerClass="carousel-container"
           removeArrowOnDeviceType={[]}
           dotListClass="custom-dot-list-style"
-          itemClass="px-3"
+          itemClass="px-6"
           customRightArrow={<CustomRightArrow />}
           customLeftArrow={<CustomLeftArrow />}
         >
@@ -163,7 +163,7 @@ export default function Certificates() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-                <p className="text-primary-600 dark:text-primary-400 dark:group-hover:text-gray-300 mb-1">
+                <p className="text-primary-600 dark:text-primary-400 dark:group-hover:text-gray-300 mb-1 contrast-150">
                   {cert.issuer}
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">{cert.date}</p>
