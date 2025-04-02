@@ -6,33 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-
-const projects = [
-  {
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform built with Next.js and Stripe',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
-  },
-  {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-  },
-  {
-    title: 'AI Image Generator',
-    description: 'An AI-powered image generation tool using stable diffusion',
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=800',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    technologies: ['Python', 'FastAPI', 'React', 'AI'],
-  },
-];
+import { profileData } from '../../../constant';
 
 export default function Projects() {
   const headingRef = useRef(null);
@@ -77,7 +51,7 @@ export default function Projects() {
           },
           onComplete: () => {
             card.addEventListener("mouseenter", () => {
-              gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+              gsap.to(card, { y: -4, duration: 0.3, ease: "power2.out" });
             });
 
             card.addEventListener("mouseleave", () => {
@@ -108,7 +82,7 @@ export default function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {profileData.projects.map((project, index) => (
             <div
               key={index}
               ref={(i) => {
@@ -139,7 +113,7 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-4">
                   <Link
-                    href={`${project.github}`}
+                    href={`${project.links.github}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
@@ -148,7 +122,7 @@ export default function Projects() {
                     Code
                   </Link>
                   <Link
-                    href={`${project.demo}`}
+                    href={`${project.links.live}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
