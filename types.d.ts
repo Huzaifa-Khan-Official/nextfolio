@@ -32,7 +32,7 @@ export interface IExperience {
 export interface IProject {
     title: string;
     description: string;
-    image: string;
+    images: string[];
     technologies: string[];
     links: {
         live: string;

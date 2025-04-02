@@ -40,12 +40,12 @@ export default function Services() {
                     delay: index * 0.2,
                     scrollTrigger: {
                         trigger: card,
-                        start: "top 80%",
+                        start: "top 90%",
                         toggleActions: "play none none none"
                     },
                     onComplete: () => {
                         card.addEventListener("mouseenter", () => {
-                            gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+                            gsap.to(card, { y: -4, duration: 0.3, ease: "power2.out" });
                         });
 
                         card.addEventListener("mouseleave", () => {

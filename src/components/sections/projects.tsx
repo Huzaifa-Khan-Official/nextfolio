@@ -1,35 +1,44 @@
-'use client';
+"use client"
 
-import { ExternalLink, Github } from 'lucide-react';
-import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { profileData } from '../../../constant';
+import { ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect, useRef } from "react"
+import Link from "next/link"
+import { profileData } from "../../../constant"
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 
 export default function Projects() {
-  const headingRef = useRef(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const headingRef = useRef(null)
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
-    const currentCards = [...cardsRef.current];
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger)
+    }
+
+    const currentCards = [...cardsRef.current]
 
     gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: 50 },
       {
-        opacity: 1, y: 0, duration: 1, delay: 0.5,
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.5,
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
+          toggleActions: "play none none none",
+        },
+      },
+    )
 
     currentCards.forEach((card, index) => {
-      if (!card) return;
+      if (!card) return
 
       gsap.fromTo(
         card,
@@ -47,34 +56,51 @@ export default function Projects() {
           scrollTrigger: {
             trigger: card,
             start: "top 80%",
-            toggleActions: "play none none none"
+            toggleActions: "play none none none",
           },
           onComplete: () => {
             card.addEventListener("mouseenter", () => {
-              gsap.to(card, { y: -4, duration: 0.3, ease: "power2.out" });
-            });
+              gsap.to(card, { y: -4, duration: 0.3, ease: "power2.out" })
+            })
 
             card.addEventListener("mouseleave", () => {
-              gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
-            });
-          }
-        }
-      );
-    });
+              gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" })
+            })
+          },
+        },
+      )
+    })
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.killTweensOf(currentCards);
-    };
-  }, []);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      gsap.killTweensOf(currentCards)
+    }
+  }, [])
+
+  const carouselSettings = {
+    responsive: {
+      all: {
+        breakpoint: { max: 4000, min: 0 },
+        items: 1,
+      },
+    },
+    infinite: true,
+    autoPlay: true,
+    autoPlaySpeed: 3000,
+    keyBoardControl: true,
+    customTransition: "transform 800ms ease-in-out",
+    transitionDuration: 800,
+    containerClass: "carousel-container",
+    removeArrowOnDeviceType: ["desktop", "tablet", "mobile"],
+    dotListClass: "custom-dot-list-style",
+    showDots: false,
+    arrows: false,
+  }
 
   return (
     <section id="projects" className="py-20 bg-light-300 dark:bg-dark-100">
       <div className="container mx-auto px-6">
-        <div
-          ref={headingRef}
-          className="text-center mb-16"
-        >
+        <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A selection of my recent work and personal projects
@@ -86,17 +112,32 @@ export default function Projects() {
             <div
               key={index}
               ref={(i) => {
-                cardsRef.current[index] = i;
+                cardsRef.current[index] = i
               }}
               className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer dark:hover:bg-primary-800/50 hover:-translate-y-1 hover:bg-primary-100 group"
             >
-              <div className="relative h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative h-48 overflow-hidden">
+                {project.images.length > 1 ? (
+                  <Carousel {...carouselSettings}>
+                    {project.images.map((image, imgIndex) => (
+                      <div key={imgIndex} className="relative h-48 w-full">
+                        <Image
+                          src={image || "/placeholder.svg"}
+                          alt={`${project.title} - image ${imgIndex + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                ) : (
+                  <Image
+                    src={project.images[0] || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -137,5 +178,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,6 +1,5 @@
 import { IProfile } from "./types";
 
-
 export const profileData: IProfile = {
     hero: {
         name: "Huzaifa Khan",
@@ -57,29 +56,9 @@ export const profileData: IProfile = {
     ],
     projects: [
         {
-            title: "Chat-App",
-            description: "A responsive, interactive chat application built with the MERN stack, featuring real-time messaging via Socket.io and image storage with Cloudinary.",
-            image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-            technologies: ["MERN", "Socket.io", "Cloudinary", "MongoDB", "Express.js", "React.js", "Node.js"],
-            links: {
-                live: "https://chat-app-rq4w.onrender.com/",
-                github: "https://github.com/Huzaifa-Khan-Official/Chat-App"
-            }
-        },
-        {
-            title: "Animated-Website",
-            description: "A fully responsive React project built with GSAP and Tailwind CSS, showcasing smooth animations and modern design.",
-            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
-            technologies: ["React.js", "GSAP", "Tailwind CSS", "Responsive Design"],
-            links: {
-                live: "https://gaming-animated-website.vercel.app/",
-                github: "https://github.com/Huzaifa-Khan-Official/Animated-Website"
-            }
-        },
-        {
             title: "Blogging Site",
             description: "A feature-rich MERN blogging platform for seamless reading, writing, and management with modern design and smooth performance.",
-            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=800",
+            images: ["/assets/Blogging Site Mockup.png"],
             technologies: ["MERN", "React.js", "MongoDB", "Express.js", "Node.js", "Zustand", "ImageKit"],
             links: {
                 live: "https://blogging-site-official.vercel.app/",
@@ -87,20 +66,30 @@ export const profileData: IProfile = {
             }
         },
         {
-            title: "Assignment Submission Portal",
-            description: "A web-based platform designed for streamlined assignment submissions and management, featuring user authentication and real-time updates.",
-            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=800",
-            technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Firebase"],
+            title: "Animated-Website",
+            description: "A fully responsive React project built with GSAP and Tailwind CSS, showcasing smooth animations and modern design.",
+            images: ["/assets/Animated Website Mockup.png", "/assets/Animated Website Mobile Devices Mockup.png"],
+            technologies: ["React.js", "GSAP", "Tailwind CSS"],
             links: {
-                live: "https://assignment-submission-portal.vercel.app/",
-                github: "https://github.com/Huzaifa-Khan-Official/Assignment-Submission-Portal-Frontend"
+                live: "https://gaming-animated-website.vercel.app/",
+                github: "https://github.com/Huzaifa-Khan-Official/Animated-Website"
+            }
+        },
+        {
+            title: "Chat-App",
+            description: "A responsive, interactive chat application built with the MERN stack, featuring real-time messaging via Socket.io and image storage with Cloudinary.",
+            images: ["/assets/Chat App Mobile Mockup.png"],
+            technologies: ["MERN", "Socket.io", "Cloudinary", "MongoDB", "Express.js", "React.js", "Node.js"],
+            links: {
+                live: "https://chat-app-rq4w.onrender.com/",
+                github: "https://github.com/Huzaifa-Khan-Official/Chat-App"
             }
         },
         {
             title: "RestaurantHub",
             description: "A streamlined restaurant website allowing users to explore restaurants and menus, with secure sign-in for adding items to the cart.",
-            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
-            technologies: ["React.js", "Firebase", "Authentication", "MongoDB", "Express.js", "Node.js"],
+            images: ["/assets/RestaurantHub Mockup.png"],
+            technologies: ["React.js", "Firebase", "Authentication", "Storage"],
             links: {
                 live: "https://restauranthub.vercel.app/",
                 github: "https://github.com/Huzaifa-Khan-Official/RestaurantHub"
@@ -109,11 +98,31 @@ export const profileData: IProfile = {
         {
             title: "Agency Website",
             description: "A web agency homepage showcasing services like design, speed optimization, and customization, with client testimonials and an app download CTA.",
-            image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
+            images: ["/assets/Agency Website Mockup.png"],
             technologies: ["React.js", "Next.js", "Framer Motion", "React Bootstrap"],
             links: {
                 live: "https://next-agency-web.vercel.app/",
                 github: "https://github.com/Huzaifa-Khan-Official/next-agency-web"
+            }
+        },
+        {
+            title: "React Portfolio Maker",
+            description: "An eye-catching portfolio site built with React, featuring dynamic animations and seamless transitions.",
+            images: ["/assets/Reactfolio Mockup.jpg"],
+            technologies: ["React.js", "Framer Motion", "React Responsive Carousel", "React Toastify", "React Type Animation"],
+            links: {
+                live: "https://react-portfolio-maker.vercel.app",
+                github: "https://github.com/Huzaifa-Khan-Official/reactfolio"
+            }
+        },
+        {
+            title: "Assignment Submission Portal",
+            description: "A web-based platform designed for streamlined assignment submissions and management, featuring user authentication and real-time updates.",
+            images: ["/assets/Assignment Submission Portal Mockup.png"],
+            technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Firebase"],
+            links: {
+                live: "https://assignment-submission-portal.vercel.app/",
+                github: "https://github.com/Huzaifa-Khan-Official/Assignment-Submission-Portal-Frontend"
             }
         },
     ],
