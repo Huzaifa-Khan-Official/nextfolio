@@ -5,30 +5,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { profileData } from "../../../constant"
 
-// const experiences = [
-//   {
-//     title: "Senior Full Stack Developer",
-//     company: "Tech Corp",
-//     period: "2021 - Present",
-//     description: "Leading development of enterprise applications using modern technologies.",
-//     skills: ["Node.js", "React", "PostgreSQL", "AWS"],
-//   },
-//   {
-//     title: "Frontend Developer",
-//     company: "Digital Agency",
-//     period: "2019 - 2021",
-//     description: "Developed responsive web applications and implemented UI/UX designs.",
-//     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-//   },
-//   {
-//     title: "Junior Developer",
-//     company: "Startup Inc",
-//     period: "2017 - 2019",
-//     description: "Built and maintained various web applications and services.",
-//     skills: ["JavaScript", "HTML", "CSS", "jQuery"],
-//   },
-// ]
-
 export default function Experience() {
   const sectionRef = useRef(null)
   const headingRef = useRef(null)

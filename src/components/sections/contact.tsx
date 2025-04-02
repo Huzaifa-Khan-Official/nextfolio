@@ -126,9 +126,9 @@ export default function Contact() {
                             <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                         </div>
                         <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                        <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
+                        <Link href={`${profileData.contact.phone}`} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
                             {profileData.contact.phone}
-                        </a>
+                        </Link>
                     </div>
 
                     <div

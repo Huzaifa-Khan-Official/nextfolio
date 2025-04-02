@@ -5,6 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -38,7 +39,7 @@ export default function Projects() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const currentCards = [...cardsRef.current]; // Capture current ref values
+    const currentCards = [...cardsRef.current];
 
     gsap.fromTo(
       headingRef.current,
@@ -137,24 +138,24 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
+                  <Link
+                    href={`${project.github}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <Github className="w-5 h-5" />
                     Code
-                  </a>
-                  <a
-                    href={project.demo}
+                  </Link>
+                  <Link
+                    href={`${project.demo}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <ExternalLink className="w-5 h-5" />
                     Demo
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

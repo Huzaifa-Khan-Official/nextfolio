@@ -102,14 +102,16 @@ export default function About() {
                 <Icon iconName={`${section.icon}`} />
               </div>
               <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
-              {
-                section.skills.map((skill) => (
-                  <li key={skill} className="flex items-center contrast-150">
-                    <span className="w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
-                    <span className="text-gray-800 dark:text-gray-300 hover:underline">{skill}</span>
-                  </li>
-                ))
-              }
+              <ul>
+                {
+                  section.skills.map((skill) => (
+                    <li key={skill} className="flex items-center contrast-150">
+                      <span className="w-2 h-2 rounded-full bg-primary-700 mr-2"></span>
+                      <span className="text-gray-800 dark:text-gray-300 hover:underline">{skill}</span>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
           ))}
         </div>

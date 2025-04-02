@@ -28,6 +28,7 @@
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-multi-carousel": "^2.8.5",
     "three": "^0.174.0"
   },
   "devDependencies": {

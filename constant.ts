@@ -124,7 +124,21 @@ export const profileData: IProfile = {
             title: "Google Soft Skills Program",
             issuer: "Google",
             date: "Dec 2024",
-            image: "/images/google-cert.png",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+            title: 'Google Cloud Professional Developer',
+            issuer: 'Google Cloud',
+            date: 'October 2023',
+            image: 'https://images.unsplash.com/photo-1579403124614-197f69d8187b?auto=format&fit=crop&q=80&w=800',
+            credential: 'https://cloud.google.com',
+        },
+        {
+            title: 'Meta Frontend Developer',
+            issuer: 'Meta',
+            date: 'August 2023',
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800',
+            credential: 'https://meta.com',
         },
     ],
     contact: {
