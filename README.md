@@ -2,8 +2,8 @@
 
 This is a Progressive Web App (PWA) portfolio template built using Next.js. Follow the steps below to customize and configure it for your personal use.
 
-![Nextfolio Mobile Mockup](/assets/Phone Mockup Cover.png)
-![Nextfolio Multiple Devices Mockup](/assets/Mockup Template.png)
+![Nextfolio Mobile Mockup](/public/assets/Phone Mockup Cover.png)
+![Nextfolio Multiple Devices Mockup](/public/assets/Mockup Template.png)
 
 ## 📌 Setup Instructions
 
