@@ -82,7 +82,7 @@ export default function Experience() {
               className="flex gap-2 mb-4 rounded-lg shadow-lg bg-white dark:bg-dark-100 hover:bg-primary-100 dark:hover:bg-primary-800/50 group"
             >
               <div className="flex-grow p-6 py-4 ">
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start mb-2 gap-1 flex-wrap">
                   <h3 className="text-xl font-semibold">{exp.title}</h3>
                   <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
                 </div>

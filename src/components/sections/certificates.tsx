@@ -147,7 +147,7 @@ export default function Certificates() {
               ref={(i) => {
                 cardsRef.current[index] = i
               }}
-              className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:bg-primary-100 hover:-translate-y-1 dark:hover:bg-primary-800/50 h-full"
+              className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:bg-primary-100 hover:-translate-y-1 dark:hover:bg-primary-800/50 sm:h-full"
             >
               <div className="relative h-48">
                 <Image
