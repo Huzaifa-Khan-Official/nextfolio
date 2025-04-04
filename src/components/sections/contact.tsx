@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 import { profileData } from '../../../constant';
 import Link from 'next/link';
 import axios from 'axios';
+import { trackEvent } from '@/lib/analytics';
+import { useSectionTracking } from '@/hooks/useSectionTracking';
 
 interface FormErrors {
     name: string;
@@ -21,6 +23,7 @@ export default function Contact() {
     const phoneCardRef = useRef<HTMLDivElement>(null);
     const locationCardRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useSectionTracking('Contact Section');
 
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
@@ -169,6 +172,7 @@ export default function Contact() {
             setMessage("");
 
             setTimeout(() => setSubmitSuccess(false), 5000);
+            trackEvent('Contact', 'Form Submission', 'Success');
         } catch (error) {
             console.error('Error submitting form:', error);
         } finally {
@@ -177,7 +181,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-20 bg-light-200 dark:bg-dark-200">
+        <section id="contact" className="py-20 bg-light-200 dark:bg-dark-200" ref={sectionRef}>
             <div className="container mx-auto px-6">
                 <div
                     ref={headingRef}

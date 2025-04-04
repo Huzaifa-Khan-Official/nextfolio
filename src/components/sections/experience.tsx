@@ -4,11 +4,12 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { profileData } from "../../../constant"
+import { useSectionTracking } from "@/hooks/useSectionTracking"
 
 export default function Experience() {
-  const sectionRef = useRef(null)
   const headingRef = useRef(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useSectionTracking('Experience Section');
 
   useEffect(() => {
     const currentCards = [...cardsRef.current];

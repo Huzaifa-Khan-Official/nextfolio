@@ -5,10 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 import { profileData } from '../../../constant';
 import { Icon } from '../Icon';
+import { useSectionTracking } from '@/hooks/useSectionTracking';
 
 export default function Services() {
     const headingRef = useRef(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const sectionRef = useSectionTracking('Services Section');
 
     useEffect(() => {
         const currentCards = [...cardsRef.current];
@@ -63,7 +65,7 @@ export default function Services() {
     }, []);
 
     return (
-        <section id="services" className="py-20 bg-light-200 dark:bg-dark-200">
+        <section id="services" className="py-20 bg-light-200 dark:bg-dark-200" ref={sectionRef}>
             <div className="container mx-auto px-6">
                 <div
                     className="text-center mb-16"
@@ -84,7 +86,7 @@ export default function Services() {
                             }}
                             className="bg-white dark:bg-dark-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:bg-primary-100 group dark:hover:bg-primary-800/50 cursor-pointer"
                         >
-                            <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mb-6 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">                            
+                            <div className="bg-primary-100 dark:bg-primary-900/20 p-4 rounded-full w-fit mb-6 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-100/20">
                                 <Icon iconName={`${service.icon}`} />
                             </div>
                             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

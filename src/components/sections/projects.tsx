@@ -9,10 +9,13 @@ import Link from "next/link"
 import { profileData } from "../../../constant"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+import { trackEvent } from "@/lib/analytics"
+import { useSectionTracking } from "@/hooks/useSectionTracking"
 
 export default function Projects() {
   const headingRef = useRef(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useSectionTracking('Project Section');
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -97,8 +100,12 @@ export default function Projects() {
     arrows: false,
   }
 
+  const handleProjectClick = (projectName: string) => {
+    trackEvent('Projects', 'Project Click', projectName);
+  };
+
   return (
-    <section id="projects" className="py-20 bg-light-300 dark:bg-dark-100">
+    <section id="projects" className="py-20 bg-light-300 dark:bg-dark-100" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
@@ -115,6 +122,7 @@ export default function Projects() {
                 cardsRef.current[index] = i
               }}
               className="bg-white dark:bg-dark-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer dark:hover:bg-primary-800/50 hover:-translate-y-1 hover:bg-primary-100 group"
+              onClick={() => handleProjectClick(project.title)}
             >
               <div className="relative h-48 overflow-hidden">
                 {project.images.length > 1 ? (

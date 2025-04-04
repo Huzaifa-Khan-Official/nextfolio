@@ -9,10 +9,12 @@ import { profileData } from "../../../constant"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import { Icon } from "../Icon"
+import { useSectionTracking } from "@/hooks/useSectionTracking"
 
 export default function Certificates() {
   const headingRef = useRef(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useSectionTracking('Certificate Section');
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -112,12 +114,12 @@ export default function Certificates() {
       className="absolute left-0 -translate-y-1/2 top-1/2 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-300/80 shadow-md hover:bg-white dark:hover:bg-dark-200 transition-all cursor-pointer"
       aria-label="Previous slide"
     >
-      <Icon iconName="ChevronLeft"/>
+      <Icon iconName="ChevronLeft" />
     </button>
   )
 
   return (
-    <section id="certificates" className="py-20 bg-light-300 dark:bg-dark-100">
+    <section id="certificates" className="py-20 bg-light-300 dark:bg-dark-100" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Certificates</h2>

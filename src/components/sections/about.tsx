@@ -5,10 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 import { profileData } from '../../../constant';
 import { Icon } from '../Icon';
+import { useSectionTracking } from '@/hooks/useSectionTracking';
 
 export default function About() {
   const headingRef = useRef(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useSectionTracking('About Section');
 
   useEffect(() => {
     const currentHeading = headingRef.current;
@@ -72,7 +74,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-20 bg-light-300 dark:bg-dark-100">
+    <section ref={sectionRef} id="about" className="py-20 bg-light-300 dark:bg-dark-100">
       <div className="container mx-auto px-6">
         <div
           ref={headingRef}
