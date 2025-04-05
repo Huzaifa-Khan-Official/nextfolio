@@ -15,7 +15,9 @@ import { initGA } from '@/lib/analytics';
 
 export default function Home() {
   useEffect(() => {
-    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID! && initGA();
+    if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+      initGA();
+    }
   }, []);
 
   return (
