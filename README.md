@@ -68,6 +68,19 @@ GMAIL_APP_PASSWORD=your-google-app-password
 ```
 🚨 **Note:** Ensure that "Less Secure Apps" is disabled, and use App Passwords if required by Google.
 
+### 5️⃣ (Optional) Configure Google Analytics
+To integrate Google Analytics and track page views, simply add your **Google Analytics Measurement ID** to the `.env` file.
+
+#### **Path:**
+```
+.env
+```
+#### **Add the Following:**
+```
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+🔎 **Note:** Replace `G-XXXXXXXXXX` with your actual Google Analytics Measurement ID.
+
 ## 🚀 Deployment
 To deploy your portfolio:
 1. Run the local development server:

@@ -15,9 +15,9 @@ import { initGA } from '@/lib/analytics';
 
 export default function Home() {
   useEffect(() => {
-    initGA();
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID! && initGA();
   }, []);
-  
+
   return (
     <main>
       <div className="min-h-screen bg-white dark:bg-dark-200 transition-colors duration-300">
