@@ -104,6 +104,10 @@ export default function Projects() {
     trackEvent('Projects', 'Project Click', projectName);
   };
 
+  const handleProjectLinkClick = (projectTitle: string, type: 'GitHub' | 'Live Demo') => {
+    trackEvent('Project Link', `Click - ${type}`, projectTitle);
+  };
+
   return (
     <section id="projects" className="py-20 bg-light-300 dark:bg-dark-100" ref={sectionRef}>
       <div className="container mx-auto px-6">
@@ -166,6 +170,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                    onClick={() => handleProjectLinkClick(project.title, 'GitHub')}
                   >
                     <Github className="w-5 h-5" />
                     Code
@@ -175,6 +180,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                    onClick={() => handleProjectLinkClick(project.title, 'Live Demo')}
                   >
                     <ExternalLink className="w-5 h-5" />
                     Demo
