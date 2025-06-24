@@ -165,16 +165,20 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Link
-                    href={`${project.links.github}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
-                    onClick={() => handleProjectLinkClick(project.title, 'GitHub')}
-                  >
-                    <Github className="w-5 h-5" />
-                    Code
-                  </Link>
+                  {
+                    project.links.github && (
+                      <Link
+                        href={`${project.links.github}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                        onClick={() => handleProjectLinkClick(project.title, 'GitHub')}
+                      >
+                        <Github className="w-5 h-5" />
+                        Code
+                      </Link>
+                    )
+                  }
                   <Link
                     href={`${project.links.live}`}
                     target="_blank"

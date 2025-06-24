@@ -56,6 +56,15 @@ export const profileData: IProfile = {
     ],
     projects: [
         {
+            title: "Real Estate Landing Page Template",
+            description: "A responsive and elegant HTML landing page template for real estate businesses, built with Bootstrap 5, featuring smooth animations, multiple device mockups, and customizable color themes.",
+            images: ["/assets/Real Estate UI Template Mockup.jpeg"],
+            technologies: ["HTML5", "CSS3", "Bootstrap 5", "AOS", "FontAwesome"],
+            links: {
+                live: "https://real-estate-ui-template.vercel.app/",
+            }
+        },
+        {
             title: "Blogging Site",
             description: "A feature-rich MERN blogging platform for seamless reading, writing, and management with modern design and smooth performance.",
             images: ["/assets/Blogging Site Mockup.png"],
