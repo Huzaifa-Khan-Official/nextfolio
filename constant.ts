@@ -3,55 +3,60 @@ import { IProfile } from "./types";
 export const profileData: IProfile = {
     hero: {
         name: "Huzaifa Khan",
-        title: "MERN Stack Developer",
-        subtitle: "Building scalable web applications with modern technologies",
-        resume: "https://drive.google.com/file/d/1zjaeq2r3iSCVFaPJ1tQ-hNXxTwsbjKoE/view",
+        title: "Full Stack Developer (MERN) & AI/ML Learner",
+        subtitle: "Building scalable web applications & exploring intelligent systems",
+        resume: "https://drive.google.com/file/d/16po7Y9N10usQ9NCs9l-w6Cp3uUBLoYm-/view?usp=sharing",
         social_links: {
             github: "https://github.com/Huzaifa-Khan-Official",
             linkedin: "https://linkedin.com/in/huzaifa-khan-officia",
         },
     },
     about: {
-        description: "Passionate MERN Stack Developer with expertise in React, Node.js, and MongoDB. Dedicated to writing clean and scalable code, optimizing application performance, and mentoring aspiring developers.",
+        description: "Full Stack Developer (MERN) based in Karachi, passionate about building robust, user-focused web applications and exploring AI/ML. Currently working at FoxMind Tech, training 100+ students at SMIT, and pursuing an AI/ML course at IBA CICT — all while completing my BS in Computer Science at UBIT. I write clean, scalable code and love solving real-world problems with technology.",
         expertise: [
             {
                 icon: "Palette",
                 title: "Frontend Development",
-                skills: ["React.js", "Next.js", "TailwindCSS", "Bootstrap", "Ant Design", "Material UI"],
+                skills: ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Redux Toolkit", "Ant Design", "Material UI", "Bootstrap", "Framer Motion", "GSAP"],
             },
             {
                 icon: "Server",
-                title: "Backend Development",
-                skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Cloudinary", "ImageKit"],
+                title: "Backend & Databases",
+                skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Supabase", "Firebase", "Redis", "WebSockets", "Socket.io", "REST APIs", "FastAPI"],
             },
             {
                 icon: "Code2",
-                title: "Cloud & DevOps",
-                skills: ["Git", "GitHub", "Vercel", "Render", "Netlify", "Firebase"],
+                title: "DevOps & Cloud",
+                skills: ["Docker", "Git", "GitHub", "Vercel", "Netlify", "Render", "Cloudinary", "ImageKit", "Microservices"],
+            },
+            {
+                icon: "Brain",
+                title: "AI / ML (Learning)",
+                skills: ["Python", "TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "NLP", "Feature Engineering"],
             },
         ],
     },
-    experiences: [
+    experiences: [        
         {
             title: "Web & App Development Trainer",
             company: "SMIT, Karachi",
             period: "Feb 2025 - Present",
-            description: "Conducted training sessions, mentored students, and developed course content.",
-            skills: ["Teaching", "Mentorship", "Curriculum Development"],
+            description: "Conducting training sessions on web and mobile app development, helping students build real-world projects. Mentored 100+ students, guiding them to successfully complete and present their applications. Developed structured course materials and interactive exercises.",
+            skills: ["Teaching", "Mentorship", "Curriculum Development", "React.js", "Node.js", "React Native"],
         },
         {
             title: "Full Stack Developer",
-            company: "FoxMindTech",
-            period: "Dec 2024 - Feb 2025",
-            description: "Designed and developed full-stack applications using MERN stack.",
-            skills: ["MERN", "API Integration", "Frontend Development", "Backend Development", "Cloud Deployment"],
+            company: "FoxMind Tech (Remote)",
+            period: "Dec 2024 - April 2026",
+            description: "Designing and developing full-stack applications using the MERN stack. Integrating APIs that significantly reduced system lag and improved user experience. Optimizing database queries for quicker data retrieval and deploying applications on cloud platforms ensuring high scalability and minimal downtime.",
+            skills: ["MERN Stack", "API Integration", "MongoDB", "React.js", "Node.js", "Cloud Deployment", "Docker"],
         },
         {
             title: "Frontend Intern",
-            company: "UxBolt",
-            period: "Sep 2024 - Nov 2024",
-            description: "Worked on UI development and optimized frontend performance.",
-            skills: ["React.js", "Next.js", "TailwindCSS", "Ant Design"],
+            company: "UxBolt, Karachi",
+            period: "Jun 2024 - Sep 2024",
+            description: "Built interactive UI components using React.js, Redux, and TailwindCSS, resulting in smoother navigation and quicker load times. Integrated REST APIs for dynamic content updates and assisted in fixing bugs improving overall customer experience.",
+            skills: ["React.js", "Redux", "TailwindCSS", "REST APIs", "Ant Design"],
         },
     ],
     projects: [
@@ -75,7 +80,7 @@ export const profileData: IProfile = {
             }
         },
         {
-            title: "Animated-Website",
+            title: "Animated Website",
             description: "A fully responsive React project built with GSAP and Tailwind CSS, showcasing smooth animations and modern design.",
             images: ["/assets/Animated Website Mockup.png", "/assets/Animated Website Mobile Devices Mockup.png"],
             technologies: ["React.js", "GSAP", "Tailwind CSS"],
@@ -85,8 +90,8 @@ export const profileData: IProfile = {
             }
         },
         {
-            title: "Chat-App",
-            description: "A responsive, interactive chat application built with the MERN stack, featuring real-time messaging via Socket.io and image storage with Cloudinary.",
+            title: "Chat App",
+            description: "A responsive, interactive real-time chat application built with the MERN stack, featuring real-time messaging via Socket.io and image storage with Cloudinary.",
             images: ["/assets/Chat App Mobile Mockup.png"],
             technologies: ["MERN", "Socket.io", "Cloudinary", "MongoDB", "Express.js", "React.js", "Node.js"],
             links: {
@@ -137,116 +142,116 @@ export const profileData: IProfile = {
     ],
     services: [
         {
-            title: "Website Development",
-            description: "Development of responsive and interactive websites for individuals, businesses, or organizations using HTML5, CSS3, JavaScript, and Bootstrap. Ensures mobile-friendly and optimized performance across all devices.",
-            icon: "Globe"
-        },
-        {
-            title: "Frontend Development",
-            description: "Specialized in building intuitive user interfaces (UIs) and seamless user experiences (UX) with HTML5, CSS3, JavaScript, and React.js. Delivers fast, responsive single-page applications (SPAs).",
-            icon: "Layout"
-        },
-        {
-            title: "Custom Web Applications",
-            description: "Creation of custom web applications using React.js with backend technologies like Node.js and Express.js. Integrates Firebase for real-time data, authentication, and hosting.",
+            title: "Full Stack Web Development",
+            description: "End-to-end development of scalable web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). From database design to deployment — clean architecture, optimized APIs, and production-ready code.",
             icon: "Code"
         },
         {
-            title: "Web Hosting and Deployment",
-            description: "Assistance in deploying websites and web applications on platforms like Firebase Hosting, Netlify, or traditional servers. Optimizes performance and ensures secure HTTPS connections.",
+            title: "Frontend Development",
+            description: "Specialized in building intuitive, pixel-perfect UIs with React.js, Next.js, TypeScript, and TailwindCSS. Delivers fast, responsive single-page and server-side rendered applications.",
+            icon: "Layout"
+        },
+        {
+            title: "Backend & API Development",
+            description: "Building robust REST APIs and server-side systems with Node.js, Express.js, and FastAPI. Experienced with PostgreSQL, MongoDB, Redis, and Supabase for scalable data architecture.",
             icon: "Server"
         },
         {
-            title: "Maintenance and Updates",
-            description: "Ongoing maintenance services, including security patches, performance optimizations, and feature updates. Provides backups and uptime monitoring.",
-            icon: "Settings"
+            title: "Real-time Applications",
+            description: "Development of real-time features using WebSockets and Socket.io — including live chats, notifications, dashboards, and collaborative tools.",
+            icon: "Zap"
         },
         {
-            title: "Responsive Design Audits",
-            description: "Evaluation of existing websites for responsiveness across devices and browsers. Implementation of improvements using CSS3 media queries and modern design principles.",
-            icon: "TabletSmartphone"
+            title: "Cloud Deployment & DevOps",
+            description: "Deploying and managing applications on Vercel, Netlify, Render, and cloud platforms using Docker and CI/CD workflows. Ensuring high availability, scalability, and minimal downtime.",
+            icon: "Cloud"
         },
         {
-            title: "API Integrations",
-            description: "Integration of third-party APIs (social media, payment gateways, etc.) into web applications using JavaScript and React.js. Ensures secure and efficient data handling.",
-            icon: "Link"
-        },
-        {
-            title: "MERN Stack Development",
-            description: "Full-stack application development using MongoDB, Express.js, React.js, and Node.js. Builds scalable solutions with secure authentication and database management.",
-            icon: "Database"
-        },
-        {
-            title: "Mobile App Development",
-            description: "Development of cross-platform mobile apps using React Native or Flutter. Focuses on responsive UI, real-time data, and smooth API integrations.",
-            icon: "Smartphone"
+            title: "Website Development",
+            description: "Development of responsive and interactive websites for individuals, businesses, or organizations. Ensures mobile-friendly and optimized performance across all devices.",
+            icon: "Globe"
         },
         {
             title: "E-commerce Solutions",
-            description: "Creation of custom e-commerce platforms with the MERN stack, including secure payments, shopping carts, and order management systems.",
+            description: "Creation of custom e-commerce platforms with the MERN stack, including secure payments, shopping carts, product management, and order tracking systems.",
             icon: "ShoppingCart"
+        },
+        {
+            title: "API Integrations",
+            description: "Integration of third-party APIs (payment gateways, social auth, media storage, etc.) into web applications. Ensures secure, efficient, and well-documented data handling.",
+            icon: "Link"
+        },
+        {
+            title: "Mobile App Development",
+            description: "Development of cross-platform mobile apps using React Native. Focuses on responsive UI, real-time data, smooth animations, and seamless API integrations.",
+            icon: "Smartphone"
+        },
+        {
+            title: "Maintenance & Performance Audits",
+            description: "Ongoing maintenance including security patches, performance optimizations, database query tuning, and feature updates. Responsive design audits and accessibility improvements.",
+            icon: "Settings"
         }
     ],
     certificates: [
         {
             title: "Web & Mobile App Development",
             issuer: "S.M.I.T (Saylani Mass I.T Training)",
-            date: "February 2025",
+            date: "July 2024",
             image: "/assets/certificates/Web & App Development SMIT Certificate.png",
         },
         {
-            title: 'JavaScript Essentials 1',
-            issuer: 'CISCO Networking Academy',
-            date: 'November 2024',
-            image: '/assets/certificates/JavaScript_Essentials_1.png',
+            title: "JavaScript Essentials 1",
+            issuer: "CISCO Networking Academy",
+            date: "November 2024",
+            image: "/assets/certificates/JavaScript_Essentials_1.png",
         },
         {
-            title: 'JavaScript Essentials 2',
-            issuer: 'CISCO Networking Academy',
-            date: 'November 2024',
-            image: '/assets/certificates/JavaScript_Essentials_2.png',
+            title: "JavaScript Essentials 2",
+            issuer: "CISCO Networking Academy",
+            date: "November 2024",
+            image: "/assets/certificates/JavaScript_Essentials_2.png",
         },
         {
-            title: 'Responsive Web Design',
-            issuer: 'freeCodeCamp',
-            date: 'October 2023',
-            image: '/assets/certificates/Responsive Web Design Certificate.png',
+            title: "Google Soft Skills Program",
+            issuer: "Google",
+            date: "December 2024",
+            image: "/assets/certificates/google-soft-skills-program-certificate.png",
         },
         {
-            title: 'JavaScript Algorithms and Data Structures (Beta)',
-            issuer: 'freeCodeCamp',
-            date: 'August 2024',
-            image: '/assets/certificates/JavaScript Algorithms and Data Structures (Beta) Certificate.png',
+            title: "PCAP: Programming Essentials in Python",
+            issuer: "CISCO Networking Academy & SMIT",
+            date: "March 2022",
+            image: "/assets/certificates/Python-Programming Essential-certificate.png",
         },
         {
-            title: 'Communication & Soft Skils',
-            issuer: 'DigiSkills',
-            date: 'October 2022',
-            image: '/assets/certificates/communication & soft skils certificate.png',
+            title: "Python Fundamentals Diploma",
+            issuer: "Alison",
+            date: "February 2023",
+            image: "/assets/certificates/Python Fundamentals Diploma Certificate.png",
         },
         {
-            title: 'Google Soft Skills',
-            issuer: 'Google',
-            date: 'Descember 2024',
-            image: '/assets/certificates/google-soft-skills-program-certificate.png',
+            title: "JavaScript Algorithms and Data Structures (Beta)",
+            issuer: "freeCodeCamp",
+            date: "August 2024",
+            image: "/assets/certificates/JavaScript Algorithms and Data Structures (Beta) Certificate.png",
         },
         {
-            title: 'Python Fundamentals Diploma',
-            issuer: 'Alison',
-            date: 'February 2023',
-            image: '/assets/certificates/Python Fundamentals Diploma Certificate.png',
+            title: "Responsive Web Design",
+            issuer: "freeCodeCamp",
+            date: "October 2023",
+            image: "/assets/certificates/Responsive Web Design Certificate.png",
         },
         {
-            title: 'Python Programming Essential',
-            issuer: 'CISCO Networking Academy',
-            date: 'March 2022',
-            image: '/assets/certificates/Python-Programming Essential-certificate.png',
+            title: "Communication & Soft Skills",
+            issuer: "DigiSkills",
+            date: "October 2022",
+            image: "/assets/certificates/communication & soft skils certificate.png",
         },
     ],
     contact: {
         email: "huzaifakhanofficial01@gmail.com",
         phone: "+92-3322433615",
-        address: "Metroville, Karachi, Pakistan",
+        address: "Karachi, Pakistan",
     },
     year: new Date().getFullYear(),
 };
